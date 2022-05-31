@@ -7,7 +7,7 @@ pkgdesc="A simple application to manage backups."
 license=('GPL-3.0-only')
 backup=('etc/bungee-backup.yml')
 makedepends=('git' 'rust' 'clang')
-source=('git+ssh://git@git.philwrenn.com:2233/plwrenn/bungee_backup.git#branch=master')
+source=('https://github.com/philwrenn/bungee_backup.git#branch=main')
 md5sums=('SKIP')
 
 build() {
