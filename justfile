@@ -23,6 +23,6 @@ deb-docker:
 
 rpm-docker:
 	mkdir -p ./target
-	docker build -t bungee_backup_build:fedora-30 -f ./scripts/Dockerfile-fedora-30 ./scripts
-	./scripts/docker-cmd-fedora-30.sh /root/.cargo/bin/cargo rpm build
-	./scripts/docker-cmd-fedora-30.sh chown -R {{USER_ID}} /bungee_backup/target
+	docker build -t bungee_backup_build:fedora-36 -f ./scripts/Dockerfile-fedora-36 ./scripts
+	./scripts/docker-cmd-fedora-36.sh /root/.cargo/bin/cargo rpm build
+	./scripts/docker-cmd-fedora-36.sh chown -R {{USER_ID}} /bungee_backup/target

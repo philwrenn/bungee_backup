@@ -6,5 +6,5 @@ DOCKER_CMD_BASE="docker run --rm -ti \
     -v $DIR:/bungee_backup \
     -e "USER_ID=$USER_ID" \
     -w "/bungee_backup" \
-    bungee_backup_build:fedora-30"
+    bungee_backup_build:fedora-36"
 $DOCKER_CMD_BASE $@

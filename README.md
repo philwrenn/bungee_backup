@@ -24,13 +24,15 @@ Build release rpm (local tools and build deps)
 
 `just rpm`
 
-Build deb using Ubuntu bionic docker image.
+Build deb using Ubuntu focal docker image.
 
 `just deb-docker`
 
-Build rpm using Fedora 30 docker image.
+Build rpm using Fedora 36 docker image.
 
 `just rpm-docker`
+
+
 
 ## Configuration
 

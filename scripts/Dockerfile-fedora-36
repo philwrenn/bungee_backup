@@ -1,4 +1,4 @@
-FROM fedora:30
+FROM fedora:36
 
 RUN dnf update -y && \
     dnf install -y curl gcc libappindicator-devel libappindicator-gtk3-devel clang-devel rpmdevtools && \
