@@ -1,0 +1,15 @@
+[Unit]
+Description=Bungee Backup
+After=network-online.target
+
+[Service]
+User=root
+Environment=PATH=/bin:/sbin:/usr/bin:/usr/sbin
+ExecStart=/usr/bin/bungee-backup -d
+KillMode=process
+KillSignal=SIGINT
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

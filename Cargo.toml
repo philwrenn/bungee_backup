@@ -1,0 +1,50 @@
+[package]
+name = "bungee_backup"
+description = "A simple application to manage backups."
+version = "0.6.5"
+authors = ["Philip Wrenn <philwrenn@gmail.com>"]
+edition = "2018"
+readme = "README.md"
+license = "GPL-3.0-only"
+
+[dev-dependencies]
+cargo-deb = "1.28.2"
+
+[dependencies]
+log= "0.4.1"
+chrono = "0.4"
+psutil = "3.2.0"
+serde_json = "1.0"
+byteorder = "1.3.1"
+serde = { version = "1.0", features = ["derive"] }
+bincode = "1.1.2"
+dirs = "3.0.1"
+libc = "0.2.50"
+yaml-rust = "0.4.3"
+reqwest = "0.11.2"
+
+[package.metadata.deb]
+name = "bungee-backup"
+maintainer = "Philip Wrenn <philwrenn@gmail.com>"
+copyright = "2020, Philip Wrenn <philwrenn@gmail.com>"
+extended-description = """\
+A simple application to manage backups."""
+section = "utility"
+priority = "optional"
+maintainer-scripts = "resources/deb-scripts"
+assets = [
+    ["target/release/bungee_backup", "usr/bin/bungee-backup", "755"],
+    ["resources/systemd/bungee-backup.service", "lib/systemd/system/", "644"],
+    ["resources/desktop/bungee-backup.desktop", "usr/share/applications/", "644"],
+    ["resources/default/bungee-backup.yml", "etc/", "600"]
+]
+conf-files = ["/etc/bungee-backup.yml"]
+
+[profile.release]
+debug = false
+
+[package.metadata.rpm.cargo]
+buildflags = ["--release"]
+
+[package.metadata.rpm.targets]
+bungee_backup = { path = "/usr/bin/bungee-backup" }

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Bungee Backup
+Exec=/usr/bin/bungee-backup -s
+Icon=/usr/share/bungee-backup/icons/app_icon.png
+Terminal=false
+Type=Application
+Categories=Utility;
+Comment=Systray monitor for restic backups.
+X-GNOME-Autostart-Delay=5

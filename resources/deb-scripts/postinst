@@ -1,0 +1,8 @@
+#!/bin/bash
+/bin/systemctl enable bungee-backup
+/bin/systemctl restart bungee-backup
+echo
+echo "************************************************************"
+echo "***** Edit configuration file: /etc/bungee-backup.yml *****"
+echo "************************************************************"
+echo

@@ -1,0 +1,42 @@
+# Example: Local backup of home directory
+#
+#- name: Full Backup
+#  tag: local-home-backup
+#  max_age_hours: 48
+#  env:
+#    RESTIC_REPOSITORY: "/var/backups/restic"
+#    RESTIC_PASSWORD: "mysupersecretrepopassword"
+#  include:
+#    - /home
+
+# Example: Backup to B2 cloud
+#
+#- name: Full Backup to B2
+#  tag: full-backup-to-b2
+#  max_age_hours: 24
+#  env:
+#    B2_ACCOUNT_ID: 000000000000000000
+#    B2_ACCOUNT_KEY: K000000000000000000000000000
+#    RESTIC_REPOSITORY: "b2:myreponame"
+#    RESTIC_PASSWORD: "mysupersecretrepopassword"
+#  include:
+#    - /
+#  exclude:
+#    - /tmp
+#    - /proc
+#    - /dev
+#    - /sys
+#    - /run
+#    - /mnt
+#    - /media
+
+# Example: Backup to sftp server
+#
+#- name: Projects Backup to sftp
+#  tag: projects-backup-to-sftp
+#  max_age_hours: 4
+#  env:
+#    RESTIC_REPOSITORY: "sftp:user@host:/srv/restic-repo"
+#    RESTIC_PASSWORD: "mysupersecretrepopassword"
+#  include:
+#    - /path/to/my/projecs

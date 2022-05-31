@@ -1,0 +1,9 @@
+FROM ubuntu:focal
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt update -y && \
+    apt upgrade -y && \
+    apt install -y curl build-essential libappindicator3-dev libclang-dev clang llvm-dev && \
+    curl https://sh.rustup.rs -sSf | sh -s -- -y && \
+    . $HOME/.cargo/env && \
+    cargo install cargo-deb
+RUN apt install libssl-dev

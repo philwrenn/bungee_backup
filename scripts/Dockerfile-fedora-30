@@ -1,0 +1,7 @@
+FROM fedora:30
+
+RUN dnf update -y && \
+    dnf install -y curl gcc libappindicator-devel libappindicator-gtk3-devel clang-devel rpmdevtools && \
+    curl https://sh.rustup.rs -sSf | sh -s -- -y && \
+    . $HOME/.cargo/env && \
+    cargo install cargo-rpm
